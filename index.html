@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Microplastic Detector</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <h1>🌍 Microplastic Detector</h1>
+    <p>Track microplastic presence based on your water sample location</p>
+  </header>
+
+  <div class="container">
+    <label for="country">🌐 Select Country:</label>
+    <select id="country" onchange="updateStates()">
+      <option value="">--Choose Country--</option>
+    </select>
+
+    <label for="state">🏞️ Select State:</label>
+    <select id="state" onchange="updateCities()">
+      <option value="">--Choose State--</option>
+    </select>
+
+    <label for="city">🏙️ Select City:</label>
+    <select id="city">
+      <option value="">--Choose City--</option>
+    </select>
+
+    <label for="volume">💧 Volume of Water:</label>
+    <select id="volume">
+      <option value="">--Select Unit--</option>
+      <option value="litre">Litre</option>
+      <option value="millilitre">Millilitre</option>
+    </select>
+
+    <button onclick="showLoading()">🔍 Search</button>
+  </div>
+
+  <!-- Loading Spinner Modal -->
+  <div id="loadingModal">
+    <div class="modal-content">
+      <div class="spinner"></div>
+      <p>Searching for microplastics...</p>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
